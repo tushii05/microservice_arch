@@ -24,3 +24,16 @@ exports.loginUser = async ({ email, password }) => {
     );
     return token;
 };
+
+exports.allUsers = async () => {
+    return await User.find();
+}
+
+
+exports.getUser = async (id) => {
+    return await User.findById(id);
+}
+
+exports.deleteUser = async (id) => {
+    return await User.findByIdAndDelete(id);
+}
